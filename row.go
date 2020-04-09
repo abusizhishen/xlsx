@@ -25,3 +25,10 @@ func (r *Row) AddCell() *Cell {
 	r.Sheet.maybeAddCol(len(r.Cells))
 	return cell
 }
+
+// CopyCell adds a new Cell to the Row from copy
+func (r *Row) CopyCell(cell *Cell) {
+	r.Cells = append(r.Cells, cell)
+	r.Sheet.maybeAddCol(len(r.Cells))
+	return
+}

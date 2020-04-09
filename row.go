@@ -36,6 +36,13 @@ func (r *Row) AddCell() *Cell {
 	return cell
 }
 
+// CopyCell adds a new Cell to the Row from copy
+func (r *Row) CopyCell(cell *Cell) {
+	r.cellCount++
+	r.cells = append(r.cells, cell)
+	return
+}
+
 func (r *Row) makeCellKey(colIdx int) string {
 	return fmt.Sprintf("%s:%06d:%06d", r.Sheet.Name, r.num, colIdx)
 }
